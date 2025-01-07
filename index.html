@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Diffusion as Shader: 3D-aware Controllable Video Generation</title>
+  <title>Diffusion as Shader: 3D-aware Video Diffusion for Versatile Video Generation Control</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Diffusion as Shader: 3D-aware Controllable Video Generation</h1>
+            <h1 class="title is-1 publication-title">Diffusion as Shader: 3D-aware Video Diffusion for Versatile Video Generation Control</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -158,29 +158,18 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/tbd.jpg" alt="Teaser Image Description" width="100%"/>
+      <video poster="" id="teaser" autoplay muted loop controlsList="nodownload" playsinline>
+        <!-- Your video file here -->
+        <source src="static/videos/teaser.mp4"
+        type="video/mp4">
+      </video>
       <h2 class="subtitle has-text-centered">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+        Diffusion as Shader: One model for all the following tasks.
       </h2>
     </div>
   </div>
 </section>
 
-<!-- Teaser video-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section> -->
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -190,7 +179,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Diffusion models have demonstrated impressive performance in generating high-quality videos from text prompts or images. However, precise control over the video generation process—such as camera manipulation or content editing—remains a significant challenge. Existing methods for controlled video generation are typically limited to a single control type, lacking the flexibility to handle diverse control demands. In this paper, we introduce Diffusion as Shader (DaS), a novel approach that supports multiple video control tasks within a unified architecture. Our key insight is that achieving versatile video control necessitates leveraging 3D control signals, as videos are fundamentally 2D renderings of dynamic 3D content. Unlike prior methods limited to 2D control signals, DaS leverages 3D tracking videos as control inputs, making the video diffusion process inherently 3D-aware.
+This innovation allows DaS to achieve a wide range of video controls by simply manipulating the 3D tracking videos. A further advantage of using 3D tracking videos is their ability to effectively link frames, significantly enhancing the temporal consistency of the generated videos. With just 3 days of fine-tuning on 8 H800 GPUs using less than 10k videos, DaS demonstrates strong control capabilities across diverse tasks, including mesh-to-video generation, camera control, motion transfer, and object manipulation. 
           </p>
         </div>
       </div>
@@ -200,107 +190,55 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section> -->
-<!-- End image carousel -->
-
 <!-- Video list -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
+    <div class="container" style="max-width: 1000px;">
       <div style="margin-top: 50px;"></div>
       <h2 class="title is-3 has-text-centered" style="font-size: 2em;">Animating meshes to videos</h2>
       <div style="margin-top: 80px;"></div>
       <div id="results-list" class="results-list">
-        <div class="item item-video5" style="border: 2px solid black; border-radius: 20px; padding: 20px; background-color: rgb(222, 247, 255); position: relative;">
-          <div style="position: absolute; top: 20%; left: 15%; color: rgb(0, 0, 0); font-size: 24px; font-weight: bold;">Mesh</div>
-          <video poster="" id="video5" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
-            <!-- Your video file here -->
-            <source src="static/videos/animation/m2vmix.mp4"
-            type="video/mp4">
-          </video>
+        <div style="display: flex; justify-content: space-between; gap: 20px;">
+          <div class="item item-video5" style="position: relative; flex: 1;">
+            <video poster="" id="video5" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
+              <source src="static/videos/animation/m2vmix.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video5" style="position: relative; flex: 1;">
+            <video poster="" id="video6" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
+              <source src="static/videos/animation/m2vmix2.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div style="margin-top: 20px;"></div>
-        <div class="item item-video5" style="border: 2px solid black; border-radius: 20px; padding: 20px; background-color: rgb(222, 247, 255); position: relative;">
-          <div style="position: absolute; top: 20%; left: 15%; color: rgb(0, 0, 0); font-size: 24px; font-weight: bold;">Mesh</div>
-          <video poster="" id="video5" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
-            <!-- Your video file here -->
-            <source src="static/videos/animation/m2vmix2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div style="margin-top: 20px;"></div>
-        <h2 class="subtitle has-text-centered">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-        </h2>
         <div style="margin-top: 50px;"></div>
         <div class="columns is-2">
           <div class="column">
-            <div class="item item-video1" style="border: 2px solid black; border-radius: 20px; padding: 20px; background-color: rgb(222, 247, 255);">
+            <div class="item item-video1" style="position: relative;">
               <h3 class="title is-4 has-text-centered">Rendering style: A muscular man</h3>
               <video poster="" id="video1" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
-                <!-- Your video file here -->
-                <source src="static/videos/animation/m2v1.mp4"
-                type="video/mp4">
+                <source src="static/videos/animation/m2v1.mp4" type="video/mp4">
               </video>
             </div>
             <div style="margin-top: 20px;"></div>
-            <div class="item item-video3" style="border: 2px solid black; border-radius: 20px; padding: 20px; background-color: rgb(222, 247, 255);">
+            <div class="item item-video3" style="position: relative;">
               <h3 class="title is-4 has-text-centered">Rendering style: A Boxer</h3>
               <video poster="" id="video3" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
-                <!-- Your video file here -->
-                <source src="static/videos/animation/m2v3.mp4"
-                type="video/mp4">
+                <source src="static/videos/animation/m2v3.mp4" type="video/mp4">
               </video>
             </div>
           </div>
           <div class="column">
-            <div class="item item-video2" style="border: 2px solid black; border-radius: 20px; padding: 20px; background-color: rgb(222, 247, 255);">
+            <div class="item item-video2" style="position: relative;">
               <h3 class="title is-4 has-text-centered">Rendering style: Man in a suit</h3>
               <video poster="" id="video2" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
-                <!-- Your video file here -->
-                <source src="static/videos/animation/m2v2.mp4"
-                type="video/mp4">
+                <source src="static/videos/animation/m2v2.mp4" type="video/mp4">
               </video>
             </div>
             <div style="margin-top: 20px;"></div>
-            <div class="item item-video4" style="border: 2px solid black; border-radius: 20px; padding: 20px; background-color: rgb(222, 247, 255);">
+            <div class="item item-video4" style="position: relative;">
               <h3 class="title is-4 has-text-centered">Rendering style: A sad person</h3>
               <video poster="" id="video4" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
-                <!-- Your video file here -->
-                <source src="static/videos/animation/m2v4.mp4"
-                type="video/mp4">
+                <source src="static/videos/animation/m2v4.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -318,48 +256,37 @@
 <!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
+    <div class="container" style="max-width: 1000px;">
       <div style="margin-top: 50px;"></div>
       <h2 class="title is-3 has-text-centered" style="font-size: 2em;">Camera Control</h2>
       <div style="margin-top: 80px;"></div>
       <div style="display: flex; justify-content: space-between;">
         <div style="width: 50%; text-align: center; padding: 10px;">
           <img src="static/videos/scenes/pose.png" alt="Camera Control" style="width: 100%;">
-          <h2 class="subtitle has-text-centered">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. 
-          </h2>
         </div>
         <div style="width:48%; display: flex; flex-wrap: wrap; justify-content: space-between;">
-          <div class="item item-video1" style="width: 49%; height: 40%; border: 2px solid black; border-radius: 20px; background-color: rgb(255, 237, 240); padding: 10px;">
+          <div class="item item-video1" style="width: 49%; height: 40%;">
             <h3 class="title is-4 has-text-centered">Moving Up</h3>
             <video poster="" id="video1" autoplay muted loop height="90%">
-              <!-- Your video file here -->
-              <source src="static/videos/scenes/c1.mp4"
-              type="video/mp4">
+              <source src="static/videos/scenes/c1.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="item item-video2" style="width: 49%; height: 40%; border: 2px solid black; border-radius: 20px; background-color: rgb(255, 237, 240); padding: 10px;">
+          <div class="item item-video2" style="width: 49%; height: 40%;">
             <h3 class="title is-4 has-text-centered">Moving Down</h3>
             <video poster="" id="video2" autoplay muted loop height="90%">
-              <!-- Your video file here -->
-              <source src="static/videos/scenes/c4.mp4"
-              type="video/mp4">
+              <source src="static/videos/scenes/c4.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="item item-video3" style="width: 49%; height: 40%; border: 2px solid black; border-radius: 20px; background-color: rgb(255, 237, 240); padding: 10px;">
+          <div class="item item-video3" style="width: 49%; height: 40%;">
             <h3 class="title is-4 has-text-centered">Moving Right</h3>
             <video poster="" id="video3" autoplay muted loop height="90%">
-              <!-- Your video file here -->
-              <source src="static/videos/scenes/c2.mp4"
-              type="video/mp4">
+              <source src="static/videos/scenes/c2.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="item item-video4" style="width: 49%; height: 40%; border: 2px solid black; border-radius: 20px; background-color: rgb(255, 237, 240); padding: 10px;">
+          <div class="item item-video4" style="width: 49%; height: 40%;">
             <h3 class="title is-4 has-text-centered">Moving Left</h3>
             <video poster="" id="video4" autoplay muted loop height="90%">
-              <!-- Your video file here -->
-              <source src="static/videos/scenes/c3.mp4"
-              type="video/mp4">
+              <source src="static/videos/scenes/c3.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -376,9 +303,7 @@
         <div style="width: 25%; text-align: center;">Moving Down</div>
       </div>
       <video poster="" id="camctrl" autoplay muted loop height="90%">
-        <!-- Your video file here -->
-        <source src="static/videos/scenes/camctrl.mp4"
-        type="video/mp4">
+        <source src="static/videos/scenes/camctrl.mp4" type="video/mp4">
       </video>
       <div style="display: flex; flex-direction: column; align-items: center;">
         <div style="margin-top: 20px;"></div>
@@ -390,13 +315,9 @@
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); gap: 60px;">
           <!-- 第一组：原图像和生成视频 -->
           <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-            <!-- 原图像 -->
             <div class="item item-image" style="flex: 1;">
               <img src="static/videos/spiral/images/00022.png" alt="Scene 1" style="width: 98%;">
             </div>
-            <!-- 箭头 - 进一步减小箭头两侧的间距 -->
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
-            <!-- 生成视频 -->
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/spiral/results/00022.mp4" type="video/mp4">
@@ -406,15 +327,11 @@
 
           <!-- 第二组：原图像和生成视频 -->
           <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-            <!-- 原图像 -->
             <div class="item item-image" style="flex: 1;">
-              <img src="static/videos/spiral/images/00003.png" alt="Scene 2" style="width: 100%;">
+              <img src="static/videos/spiral/images/00003.png" alt="Scene 2" style="width: 98%;">
             </div>
-            <!-- 箭头 -->
-            <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-            <!-- 生成视频 -->
             <div class="item item-video" style="flex: 1;">
-              <video autoplay muted loop style="width: 100%;">
+              <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/spiral/results/00003.mp4" type="video/mp4">
               </video>
             </div>
@@ -422,15 +339,11 @@
 
           <!-- 第三组：原图像和生成视频 -->
           <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-            <!-- 原图像 -->
             <div class="item item-image" style="flex: 1;">
-              <img src="static/videos/spiral/images/00010.png" alt="Scene 3" style="width: 100%;">
+              <img src="static/videos/spiral/images/00010.png" alt="Scene 3" style="width: 98%;">
             </div>
-            <!-- 箭头 -->
-            <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-            <!-- 生成视频 -->
             <div class="item item-video" style="flex: 1;">
-              <video autoplay muted loop style="width: 100%;">
+              <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/spiral/results/00010.mp4" type="video/mp4">
               </video>
             </div>
@@ -438,15 +351,11 @@
 
           <!-- 第四组：原图像和生成视频 -->
           <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-            <!-- 原图像 -->
             <div class="item item-image" style="flex: 1;">
-              <img src="static/videos/spiral/images/00014.png" alt="Scene 4" style="width: 100%;">
+              <img src="static/videos/spiral/images/00014.png" alt="Scene 4" style="width: 98%;">
             </div>
-            <!-- 箭头 -->
-            <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-            <!-- 生成视频 -->
             <div class="item item-video" style="flex: 1;">
-              <video autoplay muted loop style="width: 100%;">
+              <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/spiral/results/00014.mp4" type="video/mp4">
               </video>
             </div>
@@ -454,15 +363,11 @@
 
           <!-- 第五组：原图像和生成视频 -->
           <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-            <!-- 原图像 -->
             <div class="item item-image" style="flex: 1;">
-              <img src="static/videos/spiral/images/00011.png" alt="Scene 5" style="width: 100%;">
+              <img src="static/videos/spiral/images/00011.png" alt="Scene 5" style="width: 98%;">
             </div>
-            <!-- 箭头 -->
-            <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-            <!-- 生成视频 -->
             <div class="item item-video" style="flex: 1;">
-              <video autoplay muted loop style="width: 100%;">
+              <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/spiral/results/00011.mp4" type="video/mp4">
               </video>
             </div>
@@ -470,15 +375,11 @@
 
           <!-- 第六组：原图像和生成视频 -->
           <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-            <!-- 原图像 -->
             <div class="item item-image" style="flex: 1;">
-              <img src="static/videos/spiral/images/00001.png" alt="Scene 6" style="width: 100%;">
+              <img src="static/videos/spiral/images/00001.png" alt="Scene 6" style="width: 98%;">
             </div>
-            <!-- 箭头 -->
-            <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-            <!-- 生成视频 -->
             <div class="item item-video" style="flex: 1;">
-              <video autoplay muted loop style="width: 100%;">
+              <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/spiral/results/00001.mp4" type="video/mp4">
               </video>
             </div>
@@ -491,7 +392,7 @@
       <!-- Object Manipulation Results -->
       <section class="hero is-small">
         <div class="hero-body">
-          <div class="container">
+          <div class="container" style="max-width: 1000px;">
             <div style="margin-top: 50px;"></div>
             <h2 class="title is-3 has-text-centered" style="font-size: 2em;">Object Manipulation</h2>
             <div style="margin-top: 50px;"></div>
@@ -500,15 +401,11 @@
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px;">
               <!-- 第一组：原图像和生成视频 -->
               <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-                <!-- 原图像 -->
                 <div class="item item-image" style="flex: 1;">
-                  <img src="static/videos/manip/images/00001.png" alt="Object 1" style="width: 100%;">
+                  <img src="static/videos/manip/images/00001.png" alt="Object 1" style="width: 98%;">
                 </div>
-                <!-- 箭头 -->
-                <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-                <!-- 生成视频 -->
                 <div class="item item-video" style="flex: 1;">
-                  <video autoplay muted loop style="width: 100%;">
+                  <video autoplay muted loop style="width: 98%;">
                     <source src="static/videos/manip/results/00001.mp4" type="video/mp4">
                   </video>
                 </div>
@@ -516,15 +413,11 @@
 
               <!-- 第二组：原图像和生成视频 -->
               <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-                <!-- 原图像 -->
                 <div class="item item-image" style="flex: 1;">
-                  <img src="static/videos/manip/images/00002.png" alt="Object 2" style="width: 100%;">
+                  <img src="static/videos/manip/images/00002.png" alt="Object 2" style="width: 98%;">
                 </div>
-                <!-- 箭头 -->
-                <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-                <!-- 生成视频 -->
                 <div class="item item-video" style="flex: 1;">
-                  <video autoplay muted loop style="width: 100%;">
+                  <video autoplay muted loop style="width: 98%;">
                     <source src="static/videos/manip/results/00002.mp4" type="video/mp4">
                   </video>
                 </div>
@@ -532,15 +425,11 @@
 
               <!-- 第三组：原图像和生成视频 -->
               <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-                <!-- 原图像 -->
                 <div class="item item-image" style="flex: 1;">
-                  <img src="static/videos/manip/images/00003.png" alt="Object 3" style="width: 100%;">
+                  <img src="static/videos/manip/images/00003.png" alt="Object 3" style="width: 98%;">
                 </div>
-                <!-- 箭头 -->
-                <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-                <!-- 生成视频 -->
                 <div class="item item-video" style="flex: 1;">
-                  <video autoplay muted loop style="width: 100%;">
+                  <video autoplay muted loop style="width: 98%;">
                     <source src="static/videos/manip/results/00003.mp4" type="video/mp4">
                   </video>
                 </div>
@@ -548,15 +437,11 @@
 
               <!-- 第三组：原图像和生成视频 -->
               <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-                <!-- 原图像 -->
                 <div class="item item-image" style="flex: 1;">
-                  <img src="static/videos/manip/images/00004.png" alt="Object 2" style="width: 100%;">
+                  <img src="static/videos/manip/images/00004.png" alt="Object 2" style="width: 98%;">
                 </div>
-                <!-- 箭头 -->
-                <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-                <!-- 生成视频 -->
                 <div class="item item-video" style="flex: 1;">
-                  <video autoplay muted loop style="width: 100%;">
+                  <video autoplay muted loop style="width: 98%;">
                     <source src="static/videos/manip/results/00004.mp4" type="video/mp4">
                   </video>
                 </div>
@@ -564,60 +449,17 @@
 
               <!-- 第四组：原图像和生成视频 -->
               <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
-                <!-- 原图像 -->
                 <div class="item item-image" style="flex: 1;">
-                  <img src="static/videos/manip/images/00005.png" alt="Object 2" style="width: 100%;">
+                  <img src="static/videos/manip/images/00005.png" alt="Object 2" style="width: 98%;">
                 </div>
-                <!-- 箭头 -->
-                <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
-                <!-- 生成视频 -->
                 <div class="item item-video" style="flex: 1;">
-                  <video autoplay muted loop style="width: 100%;">
+                  <video autoplay muted loop style="width: 98%;">
                     <source src="static/videos/manip/results/00005.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
       
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="hero is-small">
-        <div class="hero-body">
-          <div class="container">
-            <h2 class="title is-3" style="font-size: 2em; text-align: center;">Object Manipulation</h2>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.5em;">
-              <div style="width: 33.33%; text-align: center;">Results</div>
-              <div style="width: 33.33%; text-align: center;">Manipulation</div>
-              <div style="width: 33.33%; text-align: center;">Source</div>
-            </div>
-            <div class="columns is-centered">
-              <div class="column is-12">
-                <video poster="" id="video1" autoplay muted loop height="100%">
-                  <!-- Your video file here -->
-                  <source src="static/videos/mani/m1.mp4"
-                  type="video/mp4">
-                </video>
-                <video poster="" id="video2" autoplay muted loop height="100%" style="margin-top: 20px;">
-                  <!-- Your video file here -->
-                  <source src="static/videos/mani/m2.mp4"
-                  type="video/mp4">
-                </video>
-                <video poster="" id="video3" autoplay muted loop height="100%">
-                  <!-- Your video file here -->
-                  <source src="static/videos/mani/m3.mp4"
-                  type="video/mp4">
-                </video>
-                <video poster="" id="video4" autoplay muted loop height="100%" style="margin-top: 20px;">
-                  <!-- Your video file here -->
-                  <source src="static/videos/mani/m4.mp4"
-                  type="video/mp4">
-                </video>
-              </div>
-            </div>
-            <h2 class="subtitle has-text-centered"></h2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
           </div>
         </div>
       </section>
@@ -678,7 +520,7 @@
 <!-- Motion Retargeting Results -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
+    <div class="container" style="max-width: 1000px;">
       <div style="margin-top: 50px;"></div>
       <h2 class="title is-3 has-text-centered" style="font-size: 2em;">Motion Transfer Results</h2>
       <div style="margin-top: 50px;"></div>
@@ -692,7 +534,6 @@
                 <source src="static/videos/mr/gt/a1.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/a1.mp4" type="video/mp4">
@@ -710,7 +551,6 @@
                 <source src="static/videos/mr/gt/a2.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/a2.mp4" type="video/mp4">
@@ -728,7 +568,6 @@
                 <source src="static/videos/mr/gt/a3.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/a3.mp4" type="video/mp4">
@@ -745,7 +584,6 @@
                 <source src="static/videos/mr/gt/a4.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/a4.mp4" type="video/mp4">
@@ -763,7 +601,6 @@
                 <source src="static/videos/mr/gt/a5.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/a5.mp4" type="video/mp4">
@@ -780,7 +617,6 @@
                 <source src="static/videos/mr/gt/h1.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/h1.mp4" type="video/mp4">
@@ -798,7 +634,6 @@
                 <source src="static/videos/mr/gt/h2.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/h2.mp4" type="video/mp4">
@@ -815,7 +650,6 @@
                 <source src="static/videos/mr/gt/h3.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/h3.mp4" type="video/mp4">
@@ -833,7 +667,6 @@
                 <source src="static/videos/mr/gt/o1.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/o1.mp4" type="video/mp4">
@@ -850,7 +683,6 @@
                 <source src="static/videos/mr/gt/o2.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/o2.mp4" type="video/mp4">
@@ -868,7 +700,6 @@
                 <source src="static/videos/mr/gt/o3.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/o3.mp4" type="video/mp4">
@@ -885,7 +716,6 @@
                 <source src="static/videos/mr/gt/o4.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/o4.mp4" type="video/mp4">
@@ -903,7 +733,6 @@
                 <source src="static/videos/mr/gt/o6.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/o6.mp4" type="video/mp4">
@@ -920,7 +749,6 @@
                 <source src="static/videos/mr/gt/v1.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/v1.mp4" type="video/mp4">
@@ -938,7 +766,6 @@
                 <source src="static/videos/mr/gt/v2.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="arrow" style="margin: 0 5px; font-size: 2.5em;">➜</div>
             <div class="item item-video" style="flex: 1;">
               <video autoplay muted loop style="width: 98%;">
                 <source src="static/videos/mr/gen/v2.mp4" type="video/mp4">
@@ -951,64 +778,6 @@
     </div>
   </div>
 </section>
-<!-- Video section -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3" style="font-size: 2em; text-align: center;">Physics-aware generation</h2>
-      <div class="columns is-centered">
-        <div class="column is-12">
-          <video poster="" id="video1" autoplay muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/phsics/1.mp4"
-            type="video/mp4">
-          </video>
-          <video poster="" id="video2" autoplay muted loop height="100%" style="margin-top: 20px;">
-            <!-- Your video file here -->
-            <source src="static/videos/phsics/2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <h2 class="subtitle has-text-centered"></h2>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-    </div>
-  </div>
-</section>
-<!-- End video section -->
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
-
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section> -->
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
