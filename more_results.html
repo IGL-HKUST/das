@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>More Results - Diffusion as Shader</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">
+                  Diffusion as Shader: 3D-aware Video Diffusion for Versatile Video Generation Control
+                </h1>
+                <div class="is-size-5 publication-authors">
+                  <!-- Paper authors -->
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=Y8AU3RkAAAAJ&hl" target="_blank">Zekai Gu<sup>1</sup></a>,</span>
+                    <span class="author-block">
+                      <a href target="_blank">Rui Yan<sup>2</sup></a>,</span>
+                      <span class="author-block">
+                        <a href="https://github.com/jiah-cloud" target="_blank">Jiahao Lu<sup>1</sup></a>,</span>
+                        <span class="author-block">
+                          <a href="https://scholar.google.com/citations?user=8eTLCkwAAAAJ&hl" target="_blank">Peng Li<sup>1</sup></a>,</span>
+                          <span class="author-block">
+                            <a href="https://frank-zy-dou.github.io/" target="_blank">Zhiyang Dou<sup>3</sup></a>,</span>
+                            <span class="author-block">
+                              <a href="https://scholar.google.com.sg/citations?user=XdahAuoAAAAJ" target="_blank">Chenyang Si<sup>4</sup></a>,</span>
+                              <span class="author-block">
+                                <a href="https://dongzhenwhu.github.io/index.html" target="_blank">Zhen Dong<sup>5</sup></a>,</span>
+                                <span class="author-block">
+                                  <a href="https://openreview.net/profile?id=~Qifeng_Liu1" target="_blank">Qifeng Liu<sup>1</sup></a>,</span>
+                                  <span class="author-block">
+                                    <a href="https://clinplayer.github.io/" target="_blank">Cheng Lin<sup>3</sup></a>,</span>
+                                    <span class="author-block">
+                                      <a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu<sup>4</sup></a>,</span>
+                                      <span class="author-block">
+                                        <a href="https://scholar.google.com/citations?user=28shvv0AAAAJ&hl" target="_blank">Wenping Wang<sup>6</sup></a>,</span>
+                                        <span class="author-block">
+                                          <a href="https://liuyuan-pal.github.io/" target="_blank">Yuan Liu<sup>1</sup></a></span>
+                                          </div>
+    
+                                          <div class="is-size-5 publication-authors">
+                                            <span class="author-block">
+                                              <sup>1</sup>The Hong Kong University of Science and Technology, 
+                                              <sup>2</sup>Zhejiang University,
+                                              <sup>3</sup>The University of Hong Kong,<br>
+                                              <sup>4</sup>Nanyang Technological University
+                                              <sup>5</sup>Wuhan University
+                                              <sup>6</sup>Texas A&M University
+                                            </span>
+                                          </div>
+    
+                                          <div class="column has-text-centered">
+                                            <div class="publication-links">
+                                               <!-- Arxiv PDF link -->
+                                            <span class="link-block">
+                                              <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                                              class="external-link button is-normal is-rounded is-dark">
+                                              <span class="icon">
+                                                <i class="fas fa-file-pdf"></i>
+                                              </span>
+                                              <span>Paper</span>
+                                            </a>
+                                          </span>
+    
+                                          <!-- Supplementary PDF link -->
+                                          <!-- <span class="link-block">
+                                            <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                              <i class="fas fa-file-pdf"></i>
+                                            </span>
+                                            <span>Supplementary</span>
+                                          </a>
+                                        </span> -->
+    
+                                        <!-- Github link -->
+                                        <span class="link-block">
+                                          <a href="https://github.com/IGL-HKUST/DiffusionAsShader" target="_blank"
+                                          class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                          </span>
+                                          <span>Code</span>
+                                        </a>
+                                      </span>
+    
+                                      <!-- ArXiv abstract Link -->
+                                      <span class="link-block">
+                                        <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                          <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                      </a>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <h2 class="title is-3 has-text-centered" style="font-size: 2.3em;">
+                More Results
+            </h2>
+        </div>
+    </div>
+</section>
+
+<!-- Object Manipulation 部分 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="max-width: 1000px;">
+      <div id="object-manipulation" style="margin-top: 100px;">
+        <h2 class="title is-3 has-text-centered" style="font-size: 2em;">
+            Object Manipulation
+            <a href="index.html" class="button is-small is-rounded is-dark" style="margin-left: 10px;">
+            Back to Index
+        </a>
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            <!-- 第一组：原图像和生成视频 -->
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+                <div class="item item-image" style="flex: 1;">
+                <img src="static/videos/manip/images/00003.png" alt="Object 3" style="width: 98%;">
+                </div>
+                <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                    <source src="static/videos/manip/results/00003.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+
+            <!-- 第二组：原图像和生成视频 -->
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+                <div class="item item-image" style="flex: 1;">
+                <img src="static/videos/manip/images/00004.png" alt="Object 4" style="width: 98%;">
+                </div>
+                <div class="item item-video" style="flex: 1;">
+                    <video autoplay muted loop style="width: 98%;">
+                        <source src="static/videos/manip/results/00004.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <!-- 从index.html移动过来的第5组及之后的视频 -->
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+                <div class="item item-image" style="flex: 1;">
+                    <img src="static/videos/manip/images/00005.png" alt="Object 5" style="width: 98%;">
+                </div>
+                <div class="item item-video" style="flex: 1;">
+                    <video autoplay muted loop style="width: 98%;">
+                        <source src="static/videos/manip/results/00005.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+                <div class="item item-image" style="flex: 1;">
+                    <img src="static/videos/manip/images/2.png" alt="Object 3" style="width: 98%;">
+                </div>
+                <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                    <source src="static/videos/manip/results/2.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="max-width: 1000px;">
+      <!-- Mesh to Video 部分 -->
+      <div id="mesh-to-video">
+        <h2 class="title is-3 has-text-centered" style="font-size: 2em;">
+            Animating meshes to videos
+            <a href="index.html" class="button is-small is-rounded is-dark" style="margin-left: 10px;">
+            Back to Index
+            </a>
+        </h2>
+        <div class="item item-video5" style="position: relative;">
+          <video poster="" id="video6" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
+            <source src="static/videos/animation/m2vmix2.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="columns is-2">
+          <div class="column">
+            <div class="item item-video3" style="position: relative;">
+              <h3 class="title is-5 has-text-centered">Rendering style: A Boxer</h3>
+              <video poster="" id="video3" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
+                <source src="static/videos/animation/m2v3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="column">
+            <div class="item item-video4" style="position: relative;">
+              <h3 class="title is-5 has-text-centered">Rendering style: A sad person</h3>
+              <video poster="" id="video4" autoplay muted loop height="80%" controlsList="nodownload" playsinline>
+                <source src="static/videos/animation/m2v4.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spiral 部分 -->
+      <div id="spiral" style="margin-top: 100px;">
+        <h2 class="title is-3 has-text-centered" style="font-size: 2em;">
+            Camera Control
+            <a href="index.html" class="button is-small is-rounded is-dark" style="margin-left: 10px;">
+            Back to Index
+            </a>
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+          <!-- 第三组：原图像和生成视频 -->
+          <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+            <div class="item item-image" style="flex: 1;">
+              <img src="static/videos/spiral/images/00010.png" alt="Scene 3" style="width: 98%;">
+            </div>
+            <div class="item item-video" style="flex: 1;">
+              <video autoplay muted loop style="width: 98%;">
+                <source src="static/videos/spiral/results/00010.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+  
+          <!-- 第四组：原图像和生成视频 -->
+          <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+            <div class="item item-image" style="flex: 1;">
+              <img src="static/videos/spiral/images/00003.png" alt="Scene 4" style="width: 98%;">
+            </div>
+            <div class="item item-video" style="flex: 1;">
+              <video autoplay muted loop style="width: 98%;">
+                <source src="static/videos/spiral/results/00003.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!-- 从index.html移动过来的第5-6组视频 -->
+          <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+            <div class="item item-image" style="flex: 1;">
+              <img src="static/videos/spiral/images/00011.png" alt="Scene 5" style="width: 98%;">
+            </div>
+            <div class="item item-video" style="flex: 1;">
+              <video autoplay muted loop style="width: 98%;">
+                <source src="static/videos/spiral/results/00011.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+            <div class="item item-image" style="flex: 1;">
+              <img src="static/videos/spiral/images/00001.png" alt="Scene 6" style="width: 98%;">
+            </div>
+            <div class="item item-video" style="flex: 1;">
+              <video autoplay muted loop style="width: 98%;">
+                <source src="static/videos/spiral/results/00001.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motion Transfer 部分 -->
+      <div id="motion-transfer" style="margin-top: 100px;">
+        <h2 class="title is-3 has-text-centered" style="font-size: 2em;">
+            Motion Transfer
+            <a href="index.html" class="button is-small is-rounded is-dark" style="margin-left: 10px;">
+            Back to Index
+            </a>
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+          <!-- 从index.html移动过来的第5组及之后的视频对 -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/a5.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/a5.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/h1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/h1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/h2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/h2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/h3.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/h3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/o1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/o1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/o2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/o2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/o3.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/o3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/o4.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/o4.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/o6.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/o6.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/v1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/v1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/v2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/v2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gt/a2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-video" style="flex: 1;">
+                <video autoplay muted loop style="width: 98%;">
+                  <source src="static/videos/mr/gen/a2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 复制完整的视频控制脚本 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const motionTransferVideos = document.querySelectorAll('.video-group video');
+    const spiralVideos = document.querySelectorAll('.item-video video');
+    
+    const allControlledVideos = [...motionTransferVideos, ...spiralVideos];
+    
+    allControlledVideos.forEach(video => {
+      const source = video.querySelector('source');
+      if (source && source.src.includes('/mr/gt/')) {
+        video.playbackRate = 0.333;
+        
+        video.addEventListener('loadedmetadata', function() {
+          this.playbackRate = 0.333;
+        });
+      }
+
+      video.addEventListener('click', function() {
+        if (this.paused) {
+          allControlledVideos.forEach(v => v.play());
+        } else {
+          allControlledVideos.forEach(v => v.pause());
+        }
+      });
+
+      video.addEventListener('ended', function() {
+        allControlledVideos.forEach(v => {
+          v.currentTime = 0;
+          v.play();
+        });
+      });
+    });
+
+    Promise.all([...allControlledVideos].map(video => {
+      return new Promise(resolve => {
+        video.addEventListener('loadedmetadata', resolve);
+      });
+    })).then(() => {
+      allControlledVideos.forEach(video => video.play());
+    });
+  });
+</script>
+
+</body>
+</html> 
