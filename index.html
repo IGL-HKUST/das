@@ -488,6 +488,68 @@
       </section>
       <!-- End video carousel -->
 
+      <!-- Object Manipulation Results -->
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container">
+            <div style="margin-top: 50px;"></div>
+            <h2 class="title is-3 has-text-centered" style="font-size: 2em;">Object Manipulation</h2>
+            <div style="margin-top: 50px;"></div>
+            
+            <!-- 使用与 Spiral 相同的网格布局 -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px;">
+              <!-- 第一组：原图像和生成视频 -->
+              <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+                <!-- 原图像 -->
+                <div class="item item-image" style="flex: 1;">
+                  <img src="static/videos/manip/images/00001.png" alt="Object 1" style="width: 100%;">
+                </div>
+                <!-- 箭头 -->
+                <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
+                <!-- 生成视频 -->
+                <div class="item item-video" style="flex: 1;">
+                  <video autoplay muted loop style="width: 100%;">
+                    <source src="static/videos/manip/results/00001.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+
+              <!-- 第二组：原图像和生成视频 -->
+              <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+                <!-- 原图像 -->
+                <div class="item item-image" style="flex: 1;">
+                  <img src="static/videos/manip/images/00002.png" alt="Object 2" style="width: 100%;">
+                </div>
+                <!-- 箭头 -->
+                <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
+                <!-- 生成视频 -->
+                <div class="item item-video" style="flex: 1;">
+                  <video autoplay muted loop style="width: 100%;">
+                    <source src="static/videos/manip/results/00002.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+
+              <!-- 第三组：原图像和生成视频 -->
+              <div class="video-group" style="display: flex; align-items: center; justify-content: center;">
+                <!-- 原图像 -->
+                <div class="item item-image" style="flex: 1;">
+                  <img src="static/videos/manip/images/00003.png" alt="Object 3" style="width: 100%;">
+                </div>
+                <!-- 箭头 -->
+                <div class="arrow" style="margin: 0 10px; font-size: 2.5em;">➜</div>
+                <!-- 生成视频 -->
+                <div class="item item-video" style="flex: 1;">
+                  <video autoplay muted loop style="width: 100%;">
+                    <source src="static/videos/manip/results/00003.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="hero is-small">
         <div class="hero-body">
           <div class="container">
@@ -530,11 +592,16 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // 获取所有视频元素
-    const videos = document.querySelectorAll('video');
+    // 控制 Motion Transfer 视频
+    const motionTransferVideos = document.querySelectorAll('.video-group video');
+    // 控制 Spiral 视频
+    const spiralVideos = document.querySelectorAll('.item-video video');
+    
+    // 合并所有需要控制的视频
+    const allControlledVideos = [...motionTransferVideos, ...spiralVideos];
     
     // 遍历所有视频元素
-    videos.forEach(video => {
+    allControlledVideos.forEach(video => {
       // 检查视频源是否来自 gt 目录
       const source = video.querySelector('source');
       if (source && source.src.includes('/mr/gt/')) {
@@ -545,14 +612,33 @@
         video.addEventListener('loadedmetadata', function() {
           this.playbackRate = 0.333;
         });
-        
-        // 添加播放事件监听器以确保速度保持
-        video.addEventListener('play', function() {
-          if (this.playbackRate !== 0.333) {
-            this.playbackRate = 0.333;
-          }
-        });
       }
+
+      // 添加点击事件监听器
+      video.addEventListener('click', function() {
+        if (this.paused) {
+          allControlledVideos.forEach(v => v.play());
+        } else {
+          allControlledVideos.forEach(v => v.pause());
+        }
+      });
+
+      // 当视频结束时重新开始播放
+      video.addEventListener('ended', function() {
+        allControlledVideos.forEach(v => {
+          v.currentTime = 0;
+          v.play();
+        });
+      });
+    });
+
+    // 确保所有视频加载完成后同时开始播放
+    Promise.all([...allControlledVideos].map(video => {
+      return new Promise(resolve => {
+        video.addEventListener('loadedmetadata', resolve);
+      });
+    })).then(() => {
+      allControlledVideos.forEach(video => video.play());
     });
   });
 </script>
