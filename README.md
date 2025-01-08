@@ -1,1 +1,1 @@
-# Diffusion as Shader: 3D-aware Controllable Video Generation
+# Diffusion as Shader: 3D-aware Video Diffusion for Versatile Video Generation Control
